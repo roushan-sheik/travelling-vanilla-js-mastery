@@ -34,6 +34,17 @@ for (const btn of allButtons) {
     const p2 = createElement("p");
     p2.innerText = price;
     li.appendChild(p2);
+
+    // Check the budget is low or not
+    const getBudget = document.getElementById("budget").innerText;
+    const budget = parseInt(getBudget);
+    if (budget - parseInt(price) < 0) {
+      alert( "Low budget earn more!" );
+      return;
+    } else {
+      document.getElementById("budget").innerText = budget - parseInt(price);
+    }
+
     // set those elements to the parent
     parent.appendChild(li);
     // calculate the total costing and display:
