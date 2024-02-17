@@ -18,7 +18,9 @@ for (const btn of allButtons) {
     setInnerText("cart-count", count);
     // access name and price
     const name = event.target.parentNode.childNodes[1].innerText;
-    const price = event.target.parentNode.childNodes[3].innerText;
+    // const price = event.target.parentNode.childNodes[3].innerText;
+    const price = event.target.parentNode.childNodes[3].childNodes[1].innerText;
+    console.log(price);
     // create new element and append to the targeted parent
     // select the parent
     const parent = document.getElementById("selected-place-container");
@@ -34,6 +36,9 @@ for (const btn of allButtons) {
     li.appendChild(p2);
     // set those elements to the parent
     parent.appendChild(li);
-    console.log(li);
+    // calculate the total costing and display:   
+    const getTotalCost = document.getElementById("total-cost").innerText;
+    let totalCost = parseInt(getTotalCost) + parseInt(price);
+    document.getElementById("total-cost").innerText = totalCost;
   });
 }
