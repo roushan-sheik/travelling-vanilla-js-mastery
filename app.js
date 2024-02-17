@@ -36,9 +36,13 @@ for (const btn of allButtons) {
     li.appendChild(p2);
     // set those elements to the parent
     parent.appendChild(li);
-    // calculate the total costing and display:   
+    // calculate the total costing and display:
     const getTotalCost = document.getElementById("total-cost").innerText;
     let totalCost = parseInt(getTotalCost) + parseInt(price);
-    document.getElementById("total-cost").innerText = totalCost;
+    setInnerText("total-cost", totalCost);
+    // Calculate grand total and show the display
+    const grandTotal = document.getElementById("grand-total").innerText;
+    let totalGrandTotal = parseInt(grandTotal) + parseInt(price);
+    setInnerText("grand-total", totalGrandTotal);
   });
 }
