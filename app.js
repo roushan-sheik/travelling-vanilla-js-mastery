@@ -48,3 +48,17 @@ function getTotal(id, value) {
   let totalCost = parseInt(getTotalCost) + parseInt(value);
   setInnerText(id, totalCost);
 }
+// add bus train flight grand total
+function grandTotal(category) {
+  const getTotal = document.getElementById("total-cost").innerText;
+  const total = parseInt(getTotal);
+  if (category === "bus") {
+    setInnerText("grand-total", total + 100);
+  } else if (category === "train") {
+    setInnerText("grand-total", total - 200);
+  } else if (category === "flight") {
+    setInnerText("grand-total", total + 500);
+  } else {
+    setInnerText("grand-total", total);
+  }
+}
